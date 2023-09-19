@@ -1,4 +1,4 @@
-﻿using Acme.IssueManagement.Books;
+﻿using Acme.IssueManagement.Entities;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -12,5 +12,7 @@ public interface IIssueManagementDbContext : IEfCoreDbContext
      * DbSet<Question> Questions { get; }
      */
     DbSet<Book> Books { get; set; }
-
+    DbSet<Customer> Customers { get; set; }
+    DbSet<BookBorrow> BookBorrows { get; set; }
+    DbSet<BookReturn> BookReturns { get; set; }
 }

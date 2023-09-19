@@ -10,15 +10,10 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Acme.IssueManagement.Repository
 {
-    public class BookAppRepository : EfCoreRepository<IIssueManagementDbContext, Book, Guid>, IBookAppRepository
+    public class BookBorrowRepository : EfCoreRepository<IIssueManagementDbContext, BookBorrow, Guid>, IBookBorrowRepository
     {
-        public BookAppRepository(IDbContextProvider<IIssueManagementDbContext> dbContextProvider) : base(dbContextProvider)
+        public BookBorrowRepository(IDbContextProvider<IIssueManagementDbContext> dbContextProvider) : base(dbContextProvider)
         {
-        }
-
-        public Task<IQueryable<Book>> GetAllBooksAsync()
-        {
-            return null;
         }
     }
 }

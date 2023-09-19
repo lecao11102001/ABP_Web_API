@@ -1,4 +1,4 @@
-﻿using Acme.IssueManagement.Books;
+﻿using Acme.IssueManagement.Entities;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -35,6 +35,27 @@ public static class IssueManagementDbContextModelCreatingExtensions
         {
             //Configure table & schema name
             b.ToTable("Books", IssueManagementDbProperties.DbSchema);
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<Customer>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable("Customers", IssueManagementDbProperties.DbSchema);
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<BookBorrow>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable("BookBorrows", IssueManagementDbProperties.DbSchema);
+            b.ConfigureByConvention();
+        });
+
+        builder.Entity<BookReturn>(b =>
+        {
+            //Configure table & schema name
+            b.ToTable("BookReturns", IssueManagementDbProperties.DbSchema);
             b.ConfigureByConvention();
         });
     }

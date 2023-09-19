@@ -1,4 +1,4 @@
-﻿using Acme.IssueManagement.Books;
+﻿using Acme.IssueManagement.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

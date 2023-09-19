@@ -1,12 +1,11 @@
 ﻿using Acme.IssueManagement.Books;
-using Acme.IssueManagement.Books.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
-namespace Acme.IssueManagement
+namespace Acme.IssueManagement.Controller
 {
     [Route("api/book")]
     [AllowAnonymous]
@@ -20,7 +19,7 @@ namespace Acme.IssueManagement
 
         [HttpPost]
         [Route("create")]
-        public async Task<IActionResult> CreateAsync([FromBody] BookRequest input)
+        public async Task<IActionResult> CreateAsync(BookRequest input)
         {
             var createdBook = await _iBookAppService.CreateAsync(input);
             return Ok(createdBook);

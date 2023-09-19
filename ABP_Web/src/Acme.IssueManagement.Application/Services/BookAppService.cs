@@ -1,28 +1,23 @@
 ﻿using Acme.IssueManagement.Books;
-using Acme.IssueManagement.Books.Models;
+using Acme.IssueManagement.Entities;
 using Acme.IssueManagement.Manager;
-using Acme.IssueManagement.Repository;
 using Acme.IssueManagement.Specifications;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Acme.IssueManagement.Service
 {
-    public class BookAppService :
-    CrudAppService<
+    public class BookAppService : CrudAppService<
         Book, // Entity sách
         BookResponse, //Model sách
         Guid, // key chính sách
         PagedAndSortedResultRequestDto, // đc sử dụng cho Phân trang / sắp xếp
-        BookRequest,// Được sử dụng để tạo/cập nhật sách
+        //BookRequest,// Được sử dụng để tạo/cập nhật sách
         BookRequest>, IBookAppService // lớp interface sách        
     {
         private readonly BookAppManager _manager;

@@ -4,6 +4,7 @@ using Acme.IssueManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.IssueManagement.Migrations
 {
     [DbContext(typeof(IssueManagementHttpApiHostMigrationsDbContext))]
-    partial class IssueManagementHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230919022726_Update_table_BookReturn")]
+    partial class UpdatetableBookReturn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

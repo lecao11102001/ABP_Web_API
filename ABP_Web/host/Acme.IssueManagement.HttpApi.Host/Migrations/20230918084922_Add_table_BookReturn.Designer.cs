@@ -4,6 +4,7 @@ using Acme.IssueManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Acme.IssueManagement.Migrations
 {
     [DbContext(typeof(IssueManagementHttpApiHostMigrationsDbContext))]
-    partial class IssueManagementHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230918084922_Add_table_BookReturn")]
+    partial class AddtableBookReturn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,7 +130,7 @@ namespace Acme.IssueManagement.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("Status")
+                    b.Property<bool?>("Static")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
@@ -168,8 +171,8 @@ namespace Acme.IssueManagement.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<double?>("FineAmount")
-                        .HasColumnType("float");
+                    b.Property<decimal>("FineAmount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")

@@ -1,4 +1,4 @@
-﻿using Acme.IssueManagement.Books;
+﻿using Acme.IssueManagement.Entities;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -19,6 +19,9 @@ public class IssueManagementDbContext : AbpDbContext<IssueManagementDbContext>, 
 
     }
     public DbSet<Book> Books { get; set; }
+    public DbSet<Customer> Customers { get  ; set ; }
+    public DbSet<BookBorrow> BookBorrows { get  ; set ; }
+    public DbSet<BookReturn> BookReturns { get ; set ; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Acme.IssueManagement.Blazor.Server\Acme.IssueManagement.Blazor.Server.csproj" />
         <ProjectReference Include="..\Acme.IssueManagement.Blazor\Acme.IssueManagement.Blazor.csproj" />
         <ProjectReference Include="..\Acme.IssueManagement.HttpApi.Client\Acme.IssueManagement.HttpApi.Client.csproj" />
     </ItemGroup>

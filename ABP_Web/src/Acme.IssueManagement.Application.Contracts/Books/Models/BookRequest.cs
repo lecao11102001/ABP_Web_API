@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using static Acme.IssueManagement.Constants.Enums;
 
 namespace Acme.IssueManagement.Books
 {
     public class BookRequest
     {
-        [Required]
         [StringLength(128)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public BookType Type { get; set; } = BookType.Undefined;
+        public BookTypeEnums? Type { get; set; } = BookTypeEnums.Undefined;
 
         [DataType(DataType.Date)]
-        public DateTime PublishDate { get; set; } = DateTime.Now;
+        public DateTime? PublishDate { get; set; } = DateTime.Now;
 
-        public float Price { get; set; }
+        public float? Price { get; set; }
+        public int? Quantity { get; set; }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Acme.IssueManagement.Books;
-using Acme.IssueManagement.Books.Models;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -14,7 +11,7 @@ namespace Acme.IssueManagement.Books
         BookResponse, // Model của sách
         Guid, // Key chính của sách
         PagedAndSortedResultRequestDto, // đc sử dụng cho Phân trang / sắp xếp
-        BookRequest,
+        //BookRequest,
         BookRequest> // Được sử dụng để tạo/cập nhật sách
     {
         Task<IEnumerable<BookResponse>> SearchAsync(string search);

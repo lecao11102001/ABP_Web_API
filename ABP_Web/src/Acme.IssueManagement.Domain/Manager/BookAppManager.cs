@@ -1,10 +1,8 @@
-﻿using Acme.IssueManagement.Books;
+﻿using Acme.IssueManagement.Entities;
 using Acme.IssueManagement.Repository;
 using Acme.IssueManagement.Specifications;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Services;
